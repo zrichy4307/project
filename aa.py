@@ -1,3 +1,4 @@
+  
 
 
 # parent class User
@@ -46,12 +47,14 @@ class Parent(User):
         if (entry_email == self.email and entry_pin == self.pin):
             print('Welcome back, {}!'.format(entry_name))
         else:
-            print('The password or email is incorrect.')f
-        
-    
+            print('The password or email is incorrect.')
 
 
-    
+
+
+
+
+
 
 
 
@@ -69,6 +72,10 @@ class Parent(User):
 
 
 if __name__ == '__main__':
-  
-    
-    
+# The following code invokes the methods inside each class for Teacher and Parent
+
+    teacher = User()
+    teacher.getLoginInfo()
+
+    parent = Parent()
+    parent.getLoginInfo()
