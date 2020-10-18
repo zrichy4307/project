@@ -1,4 +1,3 @@
-  
 
 
 # parent class User
@@ -9,7 +8,7 @@ class User:
 
     def getLoginInfo(self):
         entry_name = input('Enter your name: ')
-        enrty_email = input('Enter your email: ')
+        entry_email = input('Enter your email: ')
         entry_password = input('Enter your password: ')
         if (entry_email == self.email and entry_password == self.password):
             print('Welcome back, {}!'.format(entry_name))
@@ -26,7 +25,7 @@ class Student(User):
 
     def getLoginInfo(self):
         entry_name = input('Enter your name: ')
-        enrty_email = input('Enter your email: ')
+        entry_email = input('Enter your email: ')
         entry_password = input('Enter your password: ')
         if (entry_email == self.email and entry_pin == self.pin):
             print('Welcome back, {}!'.format(entry_name))
@@ -42,19 +41,17 @@ class Parent(User):
 
     def getLoginInfo(self):
         entry_name = input('Enter your name: ')
-        enrty_email = input('Enter your email: ')
+        entry_email = input('Enter your email: ')
         entry_password = input('Enter your password: ')
         if (entry_email == self.email and entry_pin == self.pin):
             print('Welcome back, {}!'.format(entry_name))
         else:
             print('The password or email is incorrect.')
+        
+    
 
 
-
-
-
-
-
+    
 
 
 
@@ -72,10 +69,11 @@ class Parent(User):
 
 
 if __name__ == '__main__':
-# The following code invokes the methods inside each class for Teacher and Parent
-
     teacher = User()
     teacher.getLoginInfo()
 
     parent = Parent()
     parent.getLoginInfo()
+  
+    
+    
