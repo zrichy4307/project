@@ -18,21 +18,17 @@ conn.close()
 
 fileList = ('information.docx', 'Hello.txt', 'myImage.png', \
             'myMovie.mpg', 'World.txt', 'data.pdf', 'myPhoto.jpg')
-for i in fileList:
-    if i.endswith('.txt'):
-        print(i)
+
 
 
 conn = sqlite3.connect('fileList.db')
 
 with conn:
     cur = conn.cursor()
-    cur.execute('Select * FROM tbl_files WHERE col_fname LIKE "%txt"')
-    cur.execute('''
-                INSERT INTO fileList.db.tbl_files(?)
-                VALUES
-                (i)
-                ''')
+    for i in fileList:
+        if i.endswith('.txt'):
+            print(i)
+            cur.execute('INSERT INTO tbl_files(col_fname) VALUES (?)', (i,))
     conn.commit()
 conn.close()
 
