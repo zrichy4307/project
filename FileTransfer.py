@@ -61,8 +61,17 @@ class ParentWindow(Frame):
 
     def getDestination(self):
         dstPath = filedialog.askdirectory()
-        self.txtDestination.delete(0,END)
-        self.txtDestination.insert(0, dstPath)
+        self.txtdestPath.delete(0,END)
+        self.txtdestPath.insert(0, dstPath)
+
+    def transfer(self):
+        srcPath = self.txtSource.get()
+        destPath = self.txtdestPath.get()
+        fileList = os.listdir(srcPath)
+
+        for file in fileList:
+            abspath = os.path.join(srcPath, file)
+            shutil.move(abspath, destPath)
         
         
 
